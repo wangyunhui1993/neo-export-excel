@@ -1,6 +1,6 @@
 {
   "name": "neo-export-excel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个用于 excel 导出的强大函数（支持自定义样式、自定义单元格属性、多sheet，表格合并等）",
   "main": "index.js",
   "scripts": {

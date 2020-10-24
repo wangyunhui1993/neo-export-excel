@@ -1,33 +1,42 @@
-# neo-export-excel
-
-一个用于 excel 导出的强大函数（支持自定义样式、自定义单元格属性、多sheet，表格合并等）
-
-## Installation
-
-You can use this package on the server side as well as the client side.
-
-### [Node.js](http://nodejs.org/):
-
-```
-npm install neo-export-excel
-```
-
-## Usage
-
-```javascript
-import neoExportExcel from "neo-export-excel";
-```
-
-## API
-
-```javascript
-neoExportExcel({ name: "导出表格的名称", sheets: ObjectArray });
-```
-
-eg1:多sheet
-
-```javascript
-var list1 = [{
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo</title>
+		<script src="../src/exportExcel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>研判时间</th>
+					<th>填报部门</th>
+					<th>代码</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2020-10-22</td>
+					<td>技术科</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>2020-10-22</td>
+					<td rowspan="2">办公室</td>
+					<td>123</td>
+				</tr>
+				<tr>
+					<td>2020-10-22</td>
+					<td>123</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		console.log('exportToExcel', exportToExcel)
+		/* 
+		//导合多sheet
+		var list1 = [{
 				ypsj: "2020-10-10",
 				tbbm: "技术科",
 				score: "99.12"
@@ -77,16 +86,13 @@ var list1 = [{
 					tHeader: tHeader,
 				},
 			],
-		};
+		}; 
+		exportToExcel(excelInfo);
+		*/
 
-neoExportExcel(excelInfo);
-```
-
-
-eg2:表格合并
-
-```javascript
-var content =
+		/* 
+		//导合并单元格的
+		var content =
 			`<thead>
 				<tr>
 					<th>研判时间</th>
@@ -117,6 +123,6 @@ var content =
 				content: content,
 			}],
 		};
-
-neoExportExcel(excelInfo);
-```
+		exportToExcel(excelInfo); */
+	</script>
+</html>
